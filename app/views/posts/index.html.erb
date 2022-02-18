@@ -1,9 +1,40 @@
-<h1 class="text-red-600">
-    POST-IT
-</h1>
-<h6>Welcome to Post-iT</h6>
+<div class="header-2">
+  <nav class="bg-white py-2 md:py-4">
+    <div class="container px-4 mx-auto md:flex md:items-center">
+      <div class="flex justify-between items-center">
+        <a href="#" class="font-bold text-xl text-indigo-600">Post-It</a>
+        <button class="border border-solid border-gray-600 px-3 py-1 rounded text-gray-600 opacity-50 hover:opacity-75 md:hidden" id="navbar-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0" id="navbar-collapse">
+        <a href="#" class="p-2 lg:px-4 md:mx-2 text-indigo-600 text-center border border-transparent rounded hover:bg-indigo-100 hover:text-indigo-700 transition-colors duration-300">Login</a>
+        <a href="#" class="p-2 lg:px-4 md:mx-2 text-indigo-600 text-center border border-solid border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1">Signup</a>
+      </div>
+    </div>
+  </nav>
 
-<%= form_with url: "/search", method: :get do |form| %>
-  <%= form.text_area :message, size: "70x5" %>
-  <%= form.submit "Post" %>
-<% end %>
+  <div class="bg-indigo-100 py-6 md:py-12">
+    <div class="container px-4 mx-auto">
+      <div class="text-center max-w-2xl mx-auto">
+        <%= form_with url: "/search" do |form| %>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">
+              <%= form.text_area :message, class: "shadow form-textarea mt-1 block w-full border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", rows: 5, placeholder: "Write your message" %>
+            </label>
+          </div>
+          <div class="flex items-center justify-end">
+            <%= form.submit "Post", class: "bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# <h6>Welcome to Post-iT</h6> %>
+
+<%# <%= form_with url: "/search", method: :get do |form| %>
+  <%# <%= form.text_area :message, size: "70x5" %>
+  <%# <%= form.submit "Post" %>
+<%# <% end %>
